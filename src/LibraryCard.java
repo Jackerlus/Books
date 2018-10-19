@@ -7,7 +7,7 @@ public class LibraryCard {
         maxBooks = cardMaxBooks;
         ref = cardReference;
         currentBooks = 0;
-
+    }
         public void swipe() {
             currentBooks++;
         }
@@ -24,9 +24,8 @@ public class LibraryCard {
             return ref;
         }
 
-        pblic void describe() {
-            private string text = "Library card " + ref + " with " + (maxBooks - currentBooks) + " books left.";
+        public void describe() {
+            String text = "Library card " + ref + " with " + (maxBooks - currentBooks) + " books left.";
             System.out.println(text);
         }
     }
-}

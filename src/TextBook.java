@@ -17,16 +17,12 @@ public class TextBook {
         if (lastChapter < length) {
             lastChapter++;
         } else {
-            System.out.println("Error - book finished.")
+            System.out.println("Error - book finished.");
         }
     }
 
     public boolean isFinished() {
-        if (lastChapter == length) {
-            return true;
-        } else {
-            return false;
-        }
+        return lastChapter == length;
     }
 
     public void closeBook() {
@@ -34,7 +30,7 @@ public class TextBook {
     }
 
     public void describe() {
-        private String text = bookTitle + " with " + (bookLength - lastChapter) " chapters left to read."
+        String text = title + " with " + (length - lastChapter) + " chapters left to read.";
         System.out.println(text);
     }
 }

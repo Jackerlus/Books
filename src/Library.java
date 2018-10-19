@@ -1,5 +1,5 @@
 public class Library {
-    private TextBook[] bookShelf[10, 10];
+    private TextBook[] bookShelf;
     private int nextBook;
     private int totalCards;
 
@@ -9,12 +9,23 @@ public class Library {
 
     public LibraryCard issueCard() {
         totalCards++;
-        return card = new LibraryCard(5, "cardID" + totalCards);
+        LibraryCard card = new LibraryCard(5, "cardID" + totalCards);
+        return card;
     }
 
     public TextBook borrowBook(LibraryCard card) {
-        if (card.maxBooks > card.currentBooks) {
-            
+        if (!card.expired()) {
+            card.swipe();
+            return bookShelf[0]; //Placeholder
         }
+    }
+
+    public void returnBook() {
+
+    }
+
+    public void describe() {
+        String libraryDesc = "There are 15 books left on the shelf and " + totalCards + " library cards have been issued";
+        System.out.println(libraryDesc);
     }
 }
